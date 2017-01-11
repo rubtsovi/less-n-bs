@@ -1,0 +1,143 @@
+//glowny kontener
+.main-header{
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  background: @alternate-bg;
+  z-index: 99;
+  .shadow(0 0 3px 0 rgba(0,0,0,.2));
+}
+
+
+.main-header,.header-content,.main-logo,.nav-main,.navbar-right{
+  height: @header-height-std;
+  .basic-transition;
+}
+.header-short{
+  &,.header-content,.main-logo,.nav-main,.navbar-right{
+    height: @header-height-sm;
+  }
+  .main-logo > img {
+    max-height: 28px;
+  }
+}
+
+
+.logo-wrapper{
+  display: table;
+  .main-logo{
+    display: table-cell;
+    .v-align;
+  }
+}
+
+//style ogolne
+.header-content{
+  ul{
+    .list-style-none;
+    li{
+      float: left;
+      a{
+        color: @menu-text-color;
+        font-weight: 700;
+        text-decoration: none;
+        .basic-transition;
+        .upper;
+        &:hover,&.menu-link-active{
+          color:@menu-hover-color;
+        }
+      }
+    }
+  }
+}
+
+//menu glowne
+.nav-main{
+  ul{
+    overflow: hidden;
+    .v-align-transform;
+    li{
+      float: left;
+      line-height: 1.4;
+      a{
+        padding:0 18px
+      }
+    }
+  }
+}
+
+//ikony po prawej
+.navbar-right{
+  ul{
+    .v-align-transform;
+    overflow: hidden;
+    margin-left: 20px;
+    li{
+      padding:0 13px;
+    }
+  }
+}
+
+//menu mobilne
+.mobile-menu{
+  //display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  transform: translateX(-360px);
+  .basic-transition;
+  background-color: @dark-bg;
+  width:75%;
+  z-index: 100;
+  max-width:360px;
+  padding:30px 20px 0 30px;
+  &.active{
+    transform: translateX(0px);
+  }
+}
+
+.main-nav-list-mobile{
+  .list-style-none;
+  li{
+    margin-bottom:10px;
+    line-height:1.4;
+    a{
+      color:@bright-text-color;
+      opacity: .5;
+      .basic-transition;
+      text-decoration: none;
+      &:hover{
+        opacity:1;
+      }
+    }
+  }
+}
+.mobile-nav-button{
+  .v-align-transform;
+  .basic-border(1px;solid;@menu-text-color;);
+  border-radius: @border-radius-base;
+  padding:2px 4px;
+  display: table;
+  &:hover{
+    color:@menu-hover-color;
+    border-color: @menu-hover-color;
+  }
+  i{
+    .icon(@menu-text-color;21px;23px);
+  }
+}
+
+
+#mobile-close{
+  transform: translateY(-8px);
+  i{
+    .icon(@bright-text-color;20px);
+    opacity: .5;
+    .basic-transition;
+    &:hover{
+      opacity:1;
+    }
+  }
+}

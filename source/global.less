@@ -1,0 +1,149 @@
+//zapytania o media
+@small: ~'only screen and (min-width:768px)';
+@medium: ~'only screen and (min-width:992px)';
+@large: ~'only screen and (min-width:1369px)';
+
+//bazowe style tekstu
+p,h1,h2,h3,h4,h5,h6{
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+h2{
+  .center-text
+}
+
+h1{
+  letter-spacing: -1;
+}
+
+p{
+  color:@paragraph-color
+}
+
+//akapit intro
+.intro-text{
+  p{
+    .paragraph(16px);
+    .center-text;
+    color:@text-color;
+  }
+}
+
+//biale tlo
+.alt-bg{
+  background: @alternate-bg;
+}
+
+//przyciski
+.btn{
+  .upper;
+  font-weight: 700;
+  padding:12px 20px;
+  font-size: 14px;
+  line-height: 1.4;
+  .basic-transition;
+  &:focus{
+    outline:none!important;
+  }
+  i{
+    .icon(@bright-text-color;22px;22px);
+    margin-right:10px;
+    .v-align;
+  }
+
+  span{
+    .v-align;
+  }
+}
+
+//formularz
+form{
+  input, textarea{
+    box-shadow: none !important;
+    outline: 0;
+    .basic-border(1px,solid);
+    text-indent: 15px;
+    border-radius: @border-radius-base;
+    height:40px;
+    width:100%;
+    font-size:@font-size-base;
+
+    &:hover{
+      border-color:@input-border-hover;
+    }
+    &:focus{
+      border-color:@input-border-focus;
+
+      &::-webkit-input-placeholder{
+        color:transparent;
+      }
+      &::-moz-placeholder{
+        color:transparent;
+      }
+      &:-ms-input-placeholder{
+        color:transparent;
+      }
+    }
+
+  }
+}
+
+::-webkit-input-placeholder{
+  color:@border-color;
+}
+::-moz-placeholder{
+  color:@border-color;
+  opacity: 1;
+}
+:-ms-input-placeholder{
+  color:@border-color;
+}
+
+//kolumny bez paddingu
+.no-padding > .row > div[class*="col-"]{
+  padding-left:0;
+  padding-right:0;
+}
+
+//naglowki sekcji
+.section-title{
+  margin-bottom:60px;
+}
+.section-line{
+  font-size:20px;
+  line-height:20px;
+  color:@bright-text-color;
+  .clear;
+  .center-text;
+  .v-align;
+
+  &:before{
+    float: left;
+    .section-line-mix;
+  }
+  &:after{
+    float:right;
+    .section-line-mix;
+  }
+}
+
+.section-line-span{
+  margin:0 3px;
+  i{
+    .icon(@brand-warning;18px;1;)
+  }
+}
+
+//gorny separator
+.top-separator{
+  height:110px;
+}
+
+//ramka obrazka
+.image-border{
+  .block;
+  .relative;
+  background: @dark-bg;
+  padding-top:35px;
+  border-radius: @border-radius-base @border-radius-base 0 0;
+}
